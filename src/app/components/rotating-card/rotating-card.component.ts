@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rotating-card.component.css']
 })
 export class RotatingCardComponent implements OnInit {
-
+  name = 'sellaouti';
+  firstname = 'aymen';
+  path = 'rotating_card_profile.png';
   constructor() { }
 
   ngOnInit(): void {
