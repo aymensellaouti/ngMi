@@ -70,8 +70,22 @@
     </div>
   </div>
   <div class="col-12 col-md-6">
-    <input type="text" class="form-control" [(ngModel)]="firstname" />
-    <input type="text" class="form-control" [(ngModel)]="name" />
-    <input type="text" class="form-control" [(ngModel)]="path"/>
+    <div class="row">
+      <div class="col-2">
+        <label for="firstname"> Firstname </label>
+      </div>
+      <div class="col-4">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="firstname"
+          id="firstname"
+        />
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" [(ngModel)]="name" />
+      </div>
+    </div>
+    <input type="text" class="form-control" [(ngModel)]="path" />
   </div>
 </div>

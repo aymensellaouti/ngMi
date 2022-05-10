@@ -10,7 +10,6 @@ export class RotatingCardComponent implements OnInit {
   firstname = 'aymen';
   path = 'rotating_card_profile.png';
   constructor() { }
-
   ngOnInit(): void {
   }
 

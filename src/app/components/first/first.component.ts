@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-first',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./first.component.css'],
 })
 export class FirstComponent implements OnInit {
-  name = 'aymen';
+  @Input() name = 'aymen';
   color = 'green';
   isHidden = true;
   message = '';
