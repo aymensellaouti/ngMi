@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,16 @@ import { NgStyleComponent } from './directives/ng-style/ng-style.component';
 import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 import { AmpouleComponent } from './directives/ampoule/ampoule.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { RainbowComponent } from './directives/rainbow/rainbow.component';
+import { RainbowDirective } from './directives/rainbow.directive';
+
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import localeAr from '@angular/common/locales/ar';
+import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
+
+registerLocaleData(localeFr);
+registerLocaleData(localeAr);
 
 @NgModule({
   declarations: [
@@ -41,14 +51,15 @@ import { HighlightDirective } from './directives/highlight.directive';
     NgStyleComponent,
     MiniWordComponent,
     AmpouleComponent,
-    HighlightDirective
+    HighlightDirective,
+    RainbowComponent,
+    RainbowDirective,
+    DefaultImagePipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [
+    /* [{ provide: LOCALE_ID, useValue: 'ar-AR' }] */
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

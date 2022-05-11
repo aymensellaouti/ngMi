@@ -1,5 +1,8 @@
 <div class="row">
   <div class="col">
+    <div class="alert alert-warning">
+      {{ date | date: "fullDate":"+0200":"ar-AR" }}
+    </div>
     <app-list [cvs]="cvs" (forwardSelectedCv)="selectCv($event)"></app-list>
   </div>
   <div class="col"><app-card [cv]="selectedCv"></app-card></div>
