@@ -18,6 +18,9 @@ import { ListComponent } from './cv/list/list.component';
 import { ItemComponent } from './cv/item/item.component';
 import { CardComponent } from './cv/card/card.component';
 import { NgStyleComponent } from './directives/ng-style/ng-style.component';
+import { MiniWordComponent } from './directives/mini-word/mini-word.component';
+import { AmpouleComponent } from './directives/ampoule/ampoule.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { NgStyleComponent } from './directives/ng-style/ng-style.component';
     ListComponent,
     ItemComponent,
     CardComponent,
-    NgStyleComponent
+    NgStyleComponent,
+    MiniWordComponent,
+    AmpouleComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
