@@ -40,6 +40,7 @@ import { DetailCvComponent } from './cv/detail-cv/detail-cv.component';
 import { NF404Component } from './components/nf404/nf404.component';
 import { TestFormComponent } from './components/test-form/test-form.component';
 import { LoginComponent } from './login/login.component';
+import { AddCvComponent } from './cv/add-cv/add-cv.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeAr);
@@ -74,6 +75,7 @@ registerLocaleData(localeAr);
     NF404Component,
     TestFormComponent,
     LoginComponent,
+    AddCvComponent,
   ],
   imports: [
     BrowserModule,

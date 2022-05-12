@@ -9,8 +9,16 @@
       >
     </li>
     <li>
-      <a [routerLink]="['/cv']" routerLinkActive="active text-danger"
+      <a
+        [routerLink]="['/cv']"
+        routerLinkActive="active text-danger"
+        [routerLinkActiveOptions]="{ exact: true }"
         ><i class="fa fa-dashboard fa-fw"></i> Cv</a
+      >
+    </li>
+    <li>
+      <a [routerLink]="['/cv/add']" routerLinkActive="active text-danger"
+        ><i class="fa fa-dashboard fa-fw"></i>Add Cv</a
       >
     </li>
     <li>
