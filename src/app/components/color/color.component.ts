@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-color',
@@ -6,11 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./color.component.css'],
 })
 export class ColorComponent implements OnInit {
-  defaultColor = 'lightblue'
+  defaultColor = 'lightblue';
   color = this.defaultColor;
-  constructor() {}
+  constructor(private activatedRoute: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe((mesParametres) => {
+      console.log(mesParametres);
+
+      this.defaultColor = mesParametres.myDefaultColor;
+      this.color = mesParametres.myColor;
+    });
+  }
 
   changeColor(newColor: string) {
     this.color = newColor;

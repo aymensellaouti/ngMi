@@ -36,6 +36,7 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { TodoComponent } from './todo/todo/todo.component';
 import { EmbaucheComponent } from './cv/components/embauche/embauche.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { DetailCvComponent } from './cv/detail-cv/detail-cv.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeAr);
@@ -66,6 +67,7 @@ registerLocaleData(localeAr);
     TodoComponent,
     EmbaucheComponent,
     NavbarComponent,
+    DetailCvComponent,
   ],
   imports: [
     BrowserModule,
