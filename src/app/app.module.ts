@@ -39,6 +39,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DetailCvComponent } from './cv/detail-cv/detail-cv.component';
 import { NF404Component } from './components/nf404/nf404.component';
 import { TestFormComponent } from './components/test-form/test-form.component';
+import { LoginComponent } from './login/login.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeAr);
@@ -72,6 +73,7 @@ registerLocaleData(localeAr);
     DetailCvComponent,
     NF404Component,
     TestFormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
