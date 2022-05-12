@@ -37,6 +37,8 @@ import { TodoComponent } from './todo/todo/todo.component';
 import { EmbaucheComponent } from './cv/components/embauche/embauche.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DetailCvComponent } from './cv/detail-cv/detail-cv.component';
+import { NF404Component } from './components/nf404/nf404.component';
+import { TestFormComponent } from './components/test-form/test-form.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeAr);
@@ -68,6 +70,8 @@ registerLocaleData(localeAr);
     EmbaucheComponent,
     NavbarComponent,
     DetailCvComponent,
+    NF404Component,
+    TestFormComponent,
   ],
   imports: [
     BrowserModule,
