@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cv } from '../model/cv';
+import { CvService } from '../services/cv.service';
 
 @Component({
   selector: 'app-cv',
@@ -9,22 +10,12 @@ import { Cv } from '../model/cv';
 export class CvComponent implements OnInit {
   selectedCv: Cv | null = null;
   date = new Date();
-  cvs: Cv[] = [
-    new Cv(1, 39, 'aymen', 'sellaouti', 'teacher', '              ', '1234'),
-    new Cv(
-      2,
-      3,
-      'skander',
-      'sellaouti',
-      'tgangin',
-      'rotating_card_profile3.png',
-      '7'
-    ),
-    new Cv(3, 3, 'skander', 'sellaouti', 'tgangin', '', '7'),
-  ];
-  constructor() {}
+  cvs: Cv[] = [];
+  constructor(private cvService: CvService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cvs = this.cvService.getCvs();
+  }
   selectCv(cv: Cv) {
     this.selectedCv = cv;
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Todo } from '../model/todo';
 import { TodoService } from '../service/todo.service';
 
@@ -10,10 +11,14 @@ import { TodoService } from '../service/todo.service';
 export class TodoComponent implements OnInit {
   todos: Todo[] = [];
   todo = new Todo();
-  constructor(private todoService: TodoService) {}
+  constructor(
+    private todoService: TodoService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.todos = this.todoService.getAllTodos();
+    this.toastr.info('Bienvenu :)');
   }
   addTodo() {
     this.todoService.addTodo(this.todo);

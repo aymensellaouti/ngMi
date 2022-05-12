@@ -1,6 +1,11 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyComponentComponent } from './my-component/my-component.component';
@@ -29,6 +34,7 @@ import localeFr from '@angular/common/locales/fr';
 import localeAr from '@angular/common/locales/ar';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { TodoComponent } from './todo/todo/todo.component';
+import { EmbaucheComponent } from './cv/components/embauche/embauche.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeAr);
@@ -57,8 +63,15 @@ registerLocaleData(localeAr);
     RainbowDirective,
     DefaultImagePipe,
     TodoComponent,
+    EmbaucheComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
+  ],
   providers: [
     /* [{ provide: LOCALE_ID, useValue: 'ar-AR' }] */
   ],

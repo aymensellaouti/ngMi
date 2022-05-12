@@ -8,13 +8,13 @@ import { Cv } from '../model/cv';
 })
 export class ItemComponent implements OnInit {
   @Input() cv: Cv | null = null;
+  @Input() size = 50;
   /* Je vais créer un event qui envoi un cv */
   @Output() selectCv = new EventEmitter<Cv>();
   constructor() {}
 
   ngOnInit(): void {}
   sendSelectCvEvent() {
-    if (this.cv)
-      this.selectCv.emit(this.cv);
+    if (this.cv) this.selectCv.emit(this.cv);
   }
 }
