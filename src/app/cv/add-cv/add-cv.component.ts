@@ -20,8 +20,14 @@ export class AddCvComponent implements OnInit {
   ngOnInit(): void {}
   addCv(formumaire: NgForm): void {
     /* Todo Add Cv */
-    this.cvService.addCv(formumaire.value);
-    this.toastr.success(`Le cv a ajouté avec succès`);
-    this.router.navigate([ROUTES.cv]);
+    this.cvService.addCv(formumaire.value).subscribe({
+      next: (cv) => {
+        this.toastr.success(`Le cv a ajouté avec succès`);
+        this.router.navigate([ROUTES.cv]);
+      },
+      error: () => {
+        this.toastr.error('Veuillez contacter l admin');
+      },
+    });
   }
 }

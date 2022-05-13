@@ -43,7 +43,9 @@
       Veuillez spécifier un password valide
     </div>
   </div>
-  <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">
-    Submit
+  <button
+    (click)="login(loginForm.value)"
+    [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">
+    login
   </button>
 </form>
