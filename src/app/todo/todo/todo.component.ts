@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Todo } from '../model/todo';
 import { TodoService } from '../service/todo.service';
+import { TestHttpService } from '../../services/test-http.service';
 
 @Component({
   selector: 'app-todo',
@@ -13,12 +14,21 @@ export class TodoComponent implements OnInit {
   todo = new Todo();
   constructor(
     private todoService: TodoService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private testHttpService: TestHttpService
   ) {}
 
   ngOnInit(): void {
     this.todos = this.todoService.getAllTodos();
     this.toastr.info('Bienvenu :)');
+    this.testHttpService.getApi().subscribe({
+      next: (data) => {
+        console.log(data);
+      },
+    });
+    this.testHttpService.postApi().subscribe((data) => {
+      console.log(data);
+    });
   }
   addTodo() {
     this.todoService.addTodo(this.todo);

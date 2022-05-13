@@ -1,4 +1,5 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -41,6 +42,7 @@ import { NF404Component } from './components/nf404/nf404.component';
 import { TestFormComponent } from './components/test-form/test-form.component';
 import { LoginComponent } from './login/login.component';
 import { AddCvComponent } from './cv/add-cv/add-cv.component';
+import { TestObservableComponent } from './components/test-observable/test-observable.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeAr);
@@ -76,6 +78,7 @@ registerLocaleData(localeAr);
     TestFormComponent,
     LoginComponent,
     AddCvComponent,
+    TestObservableComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,6 +86,7 @@ registerLocaleData(localeAr);
     FormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    HttpClientModule
   ],
   providers: [
     /* [{ provide: LOCALE_ID, useValue: 'ar-AR' }] */
